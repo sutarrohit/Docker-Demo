@@ -1,0 +1,42 @@
+name: next_app
+
+services:
+  front-end:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: next_frontend
+    environment:
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    networks:
+      - next_network
+
+  database:
+    image: postgres:16
+    container_name: postgres_database
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_database:/var/lib/postgresql/data
+    ports:
+      - "5431:5432"
+    networks:
+      - next_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - next_network
+
+volumes:
+  postgres_database:
+
+networks:
+  next_network:
