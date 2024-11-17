@@ -7,18 +7,6 @@ This is a **Next.js** project using **Docker** and **Docker Compose**. It includ
 - A **PostgreSQL** database container for data storage.
 - A **Redis** container for caching.
 
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
-- [Configuration](#configuration)
-- [Build and Run](#build-and-run)
-- [Environment Variables](#environment-variables)
-- [Useful Commands](#useful-commands)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
-
 ## Getting Started
 
 To get started with this project, ensure you have Docker and Docker Compose installed on your machine.
